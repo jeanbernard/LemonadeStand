@@ -17,15 +17,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentLemonsLabel: UILabel!
     @IBOutlet weak var currentIceCubesLabel: UILabel!
     
+    
+    //MARK:
+    //MARK: Inventory
+    
+    var currentMoney = 10.00
+    var currentLemons = 1
+    var currentIceCubes = 3
+    
+    
     //MARK:
     //MARK: IBActions
     
     @IBAction func addLemonButtonPressed(sender: UIButton) {
-        println("Add lemon button pressed")
+        
+        if currentMoney > 0 {
+            currentMoney -= 2
+            currentLemons += 1
+            updateMainView()
+        }
+       
     }
     
     @IBAction func removeLemonButtonPressed(sender: UIButton) {
-        println("Remove lemon button pressed")
+        currentMoney += 2
+        currentLemons -= 1
+        updateMainView()
     }
     
     @IBAction func addIceButtonPressed(sender: UIButton) {
@@ -36,20 +53,12 @@ class ViewController: UIViewController {
         println("Remove ice button pressed")
     }
     
-    
-    
     //MARK:
-    //MARK: Inventory
-    
-    var currentMoney = 10.00
-    var currentLemons = 1
-    var currentIceCubes = 3
+    //MARK: Methods
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         updateMainView()
         
     }
@@ -60,7 +69,7 @@ class ViewController: UIViewController {
     }
     
     func updateMainView(){
-        currentMoneyLabel.text = "\(currentMoney)"
+        currentMoneyLabel.text = "$\(currentMoney)"
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
     }

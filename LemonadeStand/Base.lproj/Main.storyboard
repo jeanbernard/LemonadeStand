@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,19 +18,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lemonade Stand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVQ-Wc-Giu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
-                                <color key="backgroundColor" red="0.71054582008074618" green="1" blue="0.18871387417329522" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                                <rect key="frame" x="16" y="20" width="568" height="46"/>
+                                <color key="backgroundColor" red="0.27538574361213453" green="0.92019826061320753" blue="0.11226285505286038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="7G6-gX-78b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CwO-hd-FUN">
+                                <rect key="frame" x="16" y="65" width="568" height="204"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqe-Bv-DWZ">
+                                        <rect key="frame" x="77" y="59" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35K-CC-Zcr">
+                                        <rect key="frame" x="96" y="106" width="10" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inventory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tk5-qU-7tX">
+                                        <rect key="frame" x="24" y="21" width="102" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Money.png" translatesAutoresizingMaskIntoConstraints="NO" id="x7M-x8-AeQ">
+                                        <rect key="frame" x="0.0" y="50" width="77" height="39"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lemon.png" translatesAutoresizingMaskIntoConstraints="NO" id="ybJ-9w-i9U">
+                                        <rect key="frame" x="0.0" y="97" width="72" height="39"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ice.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-cm-7HK">
+                                        <rect key="frame" x="0.0" y="144" width="72" height="39"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoJ-rl-CH2">
+                                        <rect key="frame" x="96" y="153" width="10" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7105458201" green="1" blue="0.18871387419999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wVQ-Wc-Giu" secondAttribute="bottom" constant="554" id="Cyd-Cl-RWX"/>
-                            <constraint firstAttribute="trailing" secondItem="wVQ-Wc-Giu" secondAttribute="trailing" id="LTp-AE-Qqp"/>
-                            <constraint firstItem="wVQ-Wc-Giu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TYV-hK-A2Y"/>
-                            <constraint firstItem="wVQ-Wc-Giu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cfW-rG-ryw"/>
+                            <constraint firstItem="wVQ-Wc-Giu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0is-Df-9uv"/>
+                            <constraint firstItem="wVQ-Wc-Giu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="EuN-2k-Ag5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CwO-hd-FUN" secondAttribute="bottom" constant="331" id="SrS-yh-w5Z"/>
+                            <constraint firstItem="CwO-hd-FUN" firstAttribute="top" secondItem="wVQ-Wc-Giu" secondAttribute="top" constant="45" id="ZpK-Ik-0hh"/>
+                            <constraint firstItem="CwO-hd-FUN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lJk-ji-SnJ"/>
+                            <constraint firstItem="CwO-hd-FUN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ppV-KY-sPf"/>
+                            <constraint firstItem="wVQ-Wc-Giu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qZq-Mi-rVK"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,4 +84,9 @@
             <point key="canvasLocation" x="568" y="446"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ice.png" width="50" height="50"/>
+        <image name="Lemon.png" width="32" height="32"/>
+        <image name="Money.png" width="400" height="400"/>
+    </resources>
 </document>

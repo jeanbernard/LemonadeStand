@@ -35,6 +35,8 @@ class ViewController: UIViewController {
             currentMoney -= 2
             currentLemons += 1
             updateMainView()
+        } else {
+            showAlert(header: "Out of money!!", message: "Can't purchase any more lemons. Must acquire more money.")
         }
        
     }
@@ -73,7 +75,21 @@ class ViewController: UIViewController {
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
     }
+    
+    func showAlert(header: String = "Warning", message: String) {
+        
+        var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
-
+    
+    
+    
+    
+    
+    
+    
 }
 

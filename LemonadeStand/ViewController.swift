@@ -42,9 +42,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func removeLemonButtonPressed(sender: UIButton) {
-        currentMoney += 2
-        currentLemons -= 1
-        updateMainView()
+        
+        if !(currentLemons == 0) {
+            currentMoney += 2
+            currentLemons -= 1
+            updateMainView()
+        } else {
+            showAlert(header: "Out of lemons!!", message: "No more lemons to sell.")
+        }
+        
+       
     }
     
     @IBAction func addIceButtonPressed(sender: UIButton) {

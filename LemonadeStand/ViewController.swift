@@ -82,12 +82,11 @@ class ViewController: UIViewController {
     @IBAction func mixButtonPressed(sender: UIButton) {
         mixLemonsAndIce()
         lemonMixField.resignFirstResponder()
-        
+        iceMixField.resignFirstResponder()
     }
     
     @IBAction func unmixButtonPressed(sender: UIButton) {
         mixLemonsAndIce()
-        iceMixField.resignFirstResponder()
     }
     
     
@@ -137,19 +136,46 @@ class ViewController: UIViewController {
         
     }
     
-
-    func mixLemonsAndIce() {
-        
-        var amountOfLemons = lemonMixField.text
-        var amountOfIce = iceMixField.text
-        
-    }
-    
-    
     func setupKeyboardType(textField: UITextField) {
         textField.keyboardType = UIKeyboardType.NumberPad
     }
 
+    func mixLemonsAndIce() {
+        
+         //TO-DO: Subtract amount of ice and lemons from Inventory.
+        
+        var amountOfLemons = lemonMixField.text.toInt()
+        var amountOfIce = iceMixField.text.toInt()
+        
+        if let lemons = amountOfLemons {
+            println("The amount of \(lemons) entered")
+        } else {
+            println("nil")
+        }
+        
+        if let ice = amountOfIce {
+            println("The amount of \(ice) entered")
+        } else {
+            println("nil")
+        }
+        
+      
+        
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

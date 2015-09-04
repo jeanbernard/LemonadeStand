@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentMoneyLabel: UILabel!
     @IBOutlet weak var currentLemonsLabel: UILabel!
     @IBOutlet weak var currentIceCubesLabel: UILabel!
+    @IBOutlet weak var lemonMixField: UITextField!
+    @IBOutlet weak var iceMixField: UITextField!
     
     
     //MARK:
@@ -77,12 +79,26 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func mixButtonPressed(sender: UIButton) {
+        mixLemonsAndIce()
+        lemonMixField.resignFirstResponder()
+        
+    }
+    
+    @IBAction func unmixButtonPressed(sender: UIButton) {
+        mixLemonsAndIce()
+        iceMixField.resignFirstResponder()
+    }
+    
+    
     //MARK:
     //MARK: Methods
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupKeyboardType(lemonMixField)
+        setupKeyboardType(iceMixField)
         updateMainView()
         
     }
@@ -120,12 +136,20 @@ class ViewController: UIViewController {
         }
         
     }
+    
 
+    func mixLemonsAndIce() {
+        
+        var amountOfLemons = lemonMixField.text
+        var amountOfIce = iceMixField.text
+        
+    }
     
     
-    
-    
-    
+    func setupKeyboardType(textField: UITextField) {
+        textField.keyboardType = UIKeyboardType.NumberPad
+    }
+
     
     
 }

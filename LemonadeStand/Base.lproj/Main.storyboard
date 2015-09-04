@@ -241,6 +241,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="75" y="96" width="93" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="mixButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Klz-w7-gta"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lemonade.png" translatesAutoresizingMaskIntoConstraints="NO" id="2qT-WR-oqF">
                                         <rect key="frame" x="13" y="93" width="63" height="34"/>
@@ -328,6 +331,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="176" y="96" width="93" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="unmixButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2D-Rh-gv0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.88010762993207547" green="0.59032906660192375" blue="0.30326136987154195" alpha="1" colorSpace="calibratedRGB"/>
@@ -520,11 +526,13 @@
                         <outlet property="currentIceCubesLabel" destination="P2P-nc-9XA" id="YgS-mw-Xs3"/>
                         <outlet property="currentLemonsLabel" destination="ymM-go-9Eg" id="igq-fA-crG"/>
                         <outlet property="currentMoneyLabel" destination="Hqe-Bv-DWZ" id="aVt-sg-jqg"/>
+                        <outlet property="iceMixField" destination="30i-cb-81U" id="YT8-Ez-YW3"/>
+                        <outlet property="lemonMixField" destination="bBW-5i-2OE" id="eXm-bc-2q4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="543"/>
+            <point key="canvasLocation" x="906" y="514"/>
         </scene>
     </scenes>
     <resources>

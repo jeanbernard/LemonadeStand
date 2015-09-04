@@ -78,6 +78,11 @@ class ViewController: UIViewController {
     }
     
     func updateMainView(){
+        
+        addTextColor(currentLemons, label: currentLemonsLabel)
+        addTextColor(currentIceCubes, label: currentIceCubesLabel)
+        addTextColor(Int (currentMoney), label: currentMoneyLabel)
+        
         currentMoneyLabel.text = "$\(currentMoney)"
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
@@ -88,6 +93,16 @@ class ViewController: UIViewController {
         var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    func addTextColor(amount: Int, label: UILabel) {
+        
+        if amount == 0 {
+            label.textColor = UIColor.redColor()
+        } else {
+            label.textColor = UIColor.blackColor()
+        }
         
     }
 

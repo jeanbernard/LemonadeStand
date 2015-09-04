@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func addLemonButtonPressed(sender: UIButton) {
         
-        if currentMoney > 0 {
+        if currentMoney > 1 {
             currentMoney -= 2
             currentLemons += 1
             updateMainView()
@@ -55,11 +55,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addIceButtonPressed(sender: UIButton) {
-        println("Add ice button pressed")
+        
+        if currentMoney > 0 {
+            currentMoney -= 1
+            currentIceCubes += 1
+            updateMainView()
+        } else {
+            showAlert(header: "Out of money!!", message: "Can't purchase any more ice. Must acquire more money")
+        }
+        
     }
     
     @IBAction func removeIceButtonPressed(sender: UIButton) {
-        println("Remove ice button pressed")
+        
+        if !(currentIceCubes == 0) {
+            currentMoney += 1
+            currentIceCubes -= 1
+            updateMainView()
+        } else {
+            showAlert(header: "Out of ice!!", message: "No more ice to sell")
+        }
     }
     
     //MARK:

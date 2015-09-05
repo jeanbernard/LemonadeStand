@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK:
-    //MARK: IBOutlets
+    
+    //MARK: - IBOutlets
     
     @IBOutlet weak var currentMoneyLabel: UILabel!
     @IBOutlet weak var currentLemonsLabel: UILabel!
@@ -20,16 +20,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var iceMixField: UITextField!
     
     
-    //MARK:
-    //MARK: Inventory
+    //MARK: - Inventory
     
     var currentMoney = 10.00
     var currentLemons = 1
     var currentIceCubes = 3
     
     
-    //MARK:
-    //MARK: IBActions
+    //MARK: - IBActions
     
     @IBAction func addLemonButtonPressed(sender: UIButton) {
         
@@ -40,7 +38,7 @@ class ViewController: UIViewController {
         } else {
             showAlert(header: "Out of money!!", message: "Can't purchase any more lemons. Must acquire more money.")
         }
-       
+        
     }
     
     @IBAction func removeLemonButtonPressed(sender: UIButton) {
@@ -53,7 +51,7 @@ class ViewController: UIViewController {
             showAlert(header: "Out of lemons!!", message: "No more lemons to sell.")
         }
         
-       
+        
     }
     
     @IBAction func addIceButtonPressed(sender: UIButton) {
@@ -87,13 +85,14 @@ class ViewController: UIViewController {
     
     @IBAction func unmixButtonPressed(sender: UIButton) {
         mixLemonsAndIce()
+        lemonMixField.resignFirstResponder()
+        iceMixField.resignFirstResponder()
     }
     
     
-    //MARK:
-    //MARK: Methods
+    //MARK: - Methods
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupKeyboardType(lemonMixField)
@@ -101,7 +100,7 @@ class ViewController: UIViewController {
         updateMainView()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,32 +138,36 @@ class ViewController: UIViewController {
     func setupKeyboardType(textField: UITextField) {
         textField.keyboardType = UIKeyboardType.NumberPad
     }
-
+    
     func mixLemonsAndIce() {
         
-         //TO-DO: Subtract amount of ice and lemons from Inventory.
+        //TO-DO: Subtract amount of ice and lemons from Inventory.
         
         var amountOfLemons = lemonMixField.text.toInt()
         var amountOfIce = iceMixField.text.toInt()
         
         if let lemons = amountOfLemons {
-            println("The amount of \(lemons) entered")
+            if let iceCubes = amountOfIce {
+                if currentLemons >= lemons && currentIceCubes >= iceCubes {
+                    currentLemons -= lemons
+                    currentIceCubes -= iceCubes
+                    updateMainView()
+                } else {
+                    showAlert(header: "Warning", message: "Not enough inventory to mix.")
+                }
+                
+            } else {
+                showAlert(header: "Oh no!! No Ice!!", message: "You must insert ice!")
+            }
         } else {
-            println("nil")
+            showAlert(header: "Oh no!! No Lemons", message: "You must insert lemons!")
         }
         
-        if let ice = amountOfIce {
-            println("The amount of \(ice) entered")
-        } else {
-            println("nil")
-        }
-        
-      
         
     }
     
     
-
+    
     
     
     

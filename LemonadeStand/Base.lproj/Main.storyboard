@@ -266,6 +266,12 @@
                                             <rect key="frame" x="141" y="42" width="57" height="35"/>
                                         </variation>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ice.png" translatesAutoresizingMaskIntoConstraints="NO" id="jmN-Aa-EXb">
+                                        <rect key="frame" x="13" y="93" width="63" height="34"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="219" y="43" width="56" height="34"/>
+                                        </variation>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LZ-co-gz8">
                                         <rect key="frame" x="106" y="49" width="65" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -273,30 +279,6 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="200" y="42" width="23" height="27"/>
-                                        </variation>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lemonade.png" translatesAutoresizingMaskIntoConstraints="NO" id="nRr-x0-Ych">
-                                        <rect key="frame" x="13" y="93" width="63" height="34"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="86" y="134" width="72" height="62"/>
-                                        </variation>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfk-9u-92K">
-                                        <rect key="frame" x="106" y="49" width="65" height="27"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="166" y="151" width="23" height="27"/>
-                                        </variation>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acidic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-BM-Omw">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.41295582846336276" green="0.91535229952830188" blue="0.28920873675045911" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="197" y="157" width="48" height="21"/>
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmi-5W-t46">
@@ -313,12 +295,30 @@
                                             <action selector="unmixButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2D-Rh-gv0"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ice.png" translatesAutoresizingMaskIntoConstraints="NO" id="jmN-Aa-EXb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lemonade.png" translatesAutoresizingMaskIntoConstraints="NO" id="nRr-x0-Ych">
                                         <rect key="frame" x="13" y="93" width="63" height="34"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="219" y="43" width="56" height="34"/>
+                                            <rect key="frame" x="70" y="134" width="72" height="62"/>
                                         </variation>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfk-9u-92K">
+                                        <rect key="frame" x="106" y="49" width="65" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="150" y="151" width="23" height="27"/>
+                                        </variation>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acidic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-BM-Omw">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.41295582846336276" green="0.91535229952830188" blue="0.28920873675045911" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="181" y="157" width="107" height="21"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.88010762993207547" green="0.59032906660192375" blue="0.30326136987154195" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
@@ -328,12 +328,12 @@
                                         <exclude reference="2qT-WR-oqF"/>
                                         <exclude reference="gUh-Oz-3Az"/>
                                         <exclude reference="vFm-kU-GYf"/>
+                                        <exclude reference="jmN-Aa-EXb"/>
                                         <exclude reference="4LZ-co-gz8"/>
+                                        <exclude reference="dmi-5W-t46"/>
                                         <exclude reference="nRr-x0-Ych"/>
                                         <exclude reference="gfk-9u-92K"/>
                                         <exclude reference="kP3-BM-Omw"/>
-                                        <exclude reference="dmi-5W-t46"/>
-                                        <exclude reference="jmN-Aa-EXb"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -344,12 +344,12 @@
                                         <include reference="2qT-WR-oqF"/>
                                         <include reference="gUh-Oz-3Az"/>
                                         <include reference="vFm-kU-GYf"/>
+                                        <include reference="jmN-Aa-EXb"/>
                                         <include reference="4LZ-co-gz8"/>
+                                        <include reference="dmi-5W-t46"/>
                                         <include reference="nRr-x0-Ych"/>
                                         <include reference="gfk-9u-92K"/>
                                         <include reference="kP3-BM-Omw"/>
-                                        <include reference="dmi-5W-t46"/>
-                                        <include reference="jmN-Aa-EXb"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -503,6 +503,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="createdLemonade" destination="kP3-BM-Omw" id="zND-0o-2Yl"/>
                         <outlet property="currentIceCubesLabel" destination="P2P-nc-9XA" id="03a-aL-xtt"/>
                         <outlet property="currentLemonsLabel" destination="ymM-go-9Eg" id="Oxf-L4-zec"/>
                         <outlet property="currentMoneyLabel" destination="Hqe-Bv-DWZ" id="aVt-sg-jqg"/>

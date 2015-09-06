@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentIceCubesLabel: UILabel!
     @IBOutlet weak var mixButton: UIButton!
     @IBOutlet weak var unMixButton: UIButton!
+    @IBOutlet weak var createdLemonade: UILabel!
     
     
     
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     var currentLemons = 1
     var currentIceCubes = 3
     var mixedLemonAndIce: [Int] = []
+    
     
     //MARK: - IBActions
     
@@ -110,6 +112,7 @@ class ViewController: UIViewController {
         currentMoneyLabel.text = "$\(currentMoney)"
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
+
         
     }
     
@@ -151,6 +154,7 @@ class ViewController: UIViewController {
 
         if currentLemons > 0 && currentIceCubes > 0 {
             mixedLemonAndIce = [currentLemons, currentIceCubes]
+            createLemonade(lemons: currentLemons, ice: currentIceCubes)
             currentLemons -= currentLemons
             currentIceCubes -= currentIceCubes
             setupButtonAvailability(buttonPressed)
@@ -168,7 +172,28 @@ class ViewController: UIViewController {
         currentIceCubes += mixedLemonAndIce[1]
         mixedLemonAndIce.removeAll(keepCapacity: true)
         setupButtonAvailability(buttonPressed)
+        createdLemonade.hidden = true
         updateMainView()
+    }
+    
+    func createLemonade(#lemons: Int, ice: Int) {
+        
+        var resultingLemonade = Double(lemons) / Double(ice)
+        
+        if resultingLemonade > 1 {
+            createdLemonade.hidden = false
+            createdLemonade.text = "Acidic"
+            createdLemonade.textColor = UIColor.greenColor()
+        } else if resultingLemonade == 1 {
+            createdLemonade.hidden = false
+            createdLemonade.text = "Equal"
+            createdLemonade.textColor = UIColor.blackColor()
+        } else if resultingLemonade < 1 {
+            createdLemonade.hidden = false
+            createdLemonade.text = "Diluted"
+            createdLemonade.textColor = UIColor.blueColor()
+        }
+        
     }
     
     

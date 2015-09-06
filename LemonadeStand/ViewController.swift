@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentIceCubesLabel: UILabel!
     @IBOutlet weak var lemonMixField: UITextField!
     @IBOutlet weak var iceMixField: UITextField!
+    @IBOutlet weak var mixButton: UIButton!
+    @IBOutlet weak var unMixButton: UIButton!
+    
     
     
     //MARK: - Inventory
@@ -78,15 +81,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mixButtonPressed(sender: UIButton) {
+        let buttonPressed = sender.currentTitle!
+        setupButtonAvailability(buttonPressed)
         mixLemonsAndIce()
         lemonMixField.resignFirstResponder()
         iceMixField.resignFirstResponder()
+        lemonMixField.clearsOnBeginEditing = true
+        iceMixField.clearsOnBeginEditing = true
     }
     
     @IBAction func unmixButtonPressed(sender: UIButton) {
-        mixLemonsAndIce()
+        let buttonPressed = sender.currentTitle!
+        setupButtonAvailability(buttonPressed)
+        unMixLemonsAndIce()
         lemonMixField.resignFirstResponder()
         iceMixField.resignFirstResponder()
+        lemonMixField.clearsOnBeginEditing = true
+        iceMixField.clearsOnBeginEditing = true
     }
     
     
@@ -115,6 +126,21 @@ class ViewController: UIViewController {
         currentMoneyLabel.text = "$\(currentMoney)"
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
+        
+    }
+    
+    func setupButtonAvailability(button: String) {
+        if button == "Mix" {
+            unMixButton.enabled = true
+            unMixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            mixButton.enabled = false
+            mixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        } else {
+            mixButton.enabled = true
+            mixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            unMixButton.enabled = false
+            unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        }
     }
     
     func showAlert(header: String = "Warning", message: String) {
@@ -141,8 +167,6 @@ class ViewController: UIViewController {
     
     func mixLemonsAndIce() {
         
-        //TO-DO: Subtract amount of ice and lemons from Inventory.
-        
         var amountOfLemons = lemonMixField.text.toInt()
         var amountOfIce = iceMixField.text.toInt()
         
@@ -152,21 +176,45 @@ class ViewController: UIViewController {
                     currentLemons -= lemons
                     currentIceCubes -= iceCubes
                     updateMainView()
-                } else {
+                }
+                else {
                     showAlert(header: "Warning", message: "Not enough inventory to mix.")
                 }
                 
             } else {
-                showAlert(header: "Oh no!! No Ice!!", message: "You must insert ice!")
+                showAlert(header: "Oh no!!", message: "You must insert ice!")
             }
-        } else {
-            showAlert(header: "Oh no!! No Lemons", message: "You must insert lemons!")
+        }  else {
+            showAlert(header: "Oh no!!", message: "You must insert lemons!")
         }
         
         
     }
     
-    
+    func unMixLemonsAndIce() {
+        
+        var amountOfLemons = lemonMixField.text.toInt()
+        var amountOfIce = iceMixField.text.toInt()
+        
+        if let lemons = amountOfLemons {
+            if let iceCubes = amountOfIce {
+                if currentLemons < lemons && currentIceCubes < iceCubes  {
+                    currentLemons += lemons
+                    currentIceCubes += iceCubes
+                    updateMainView()
+                } else {
+                    showAlert(header: "Warning", message: "Cannot unmix.")
+                }
+                
+            } else {
+                showAlert(header: "Oh no!!", message: "You must insert amount of ice to unmix!")
+            }
+        }  else {
+            showAlert(header: "Oh no!!", message: "You must insert amount of lemons to unmix!")
+        }
+        
+        
+    }
     
     
     

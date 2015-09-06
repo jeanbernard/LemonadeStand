@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentMoneyLabel: UILabel!
     @IBOutlet weak var currentLemonsLabel: UILabel!
     @IBOutlet weak var currentIceCubesLabel: UILabel!
-    @IBOutlet weak var lemonMixField: UITextField!
-    @IBOutlet weak var iceMixField: UITextField!
     @IBOutlet weak var mixButton: UIButton!
     @IBOutlet weak var unMixButton: UIButton!
     
@@ -28,7 +26,7 @@ class ViewController: UIViewController {
     var currentMoney = 10.00
     var currentLemons = 1
     var currentIceCubes = 3
-    
+    var mixedLemonAndIce: [Int] = []
     
     //MARK: - IBActions
     
@@ -81,27 +79,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mixButtonPressed(sender: UIButton) {
-        let buttonPressed = sender.currentTitle!
-        setupButtonAvailability(buttonPressed)
-        mixLemonsAndIce()
-        lemonMixField.resignFirstResponder()
-        iceMixField.resignFirstResponder()
-        lemonMixField.clearsOnBeginEditing = true
-        iceMixField.clearsOnBeginEditing = true
-        lemonMixField.enabled = false
-        iceMixField.enabled = false
+        mixLemonsAndIce(sender.currentTitle!)
     }
     
     @IBAction func unmixButtonPressed(sender: UIButton) {
-        let buttonPressed = sender.currentTitle!
-        setupButtonAvailability(buttonPressed)
-        unMixLemonsAndIce()
-        lemonMixField.resignFirstResponder()
-        iceMixField.resignFirstResponder()
-        lemonMixField.clearsOnBeginEditing = true
-        iceMixField.clearsOnBeginEditing = true
-        lemonMixField.enabled = true
-        iceMixField.enabled = true
+        unMixLemonsAndIce(sender.currentTitle!)
     }
     
     
@@ -110,8 +92,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupKeyboardType(lemonMixField)
-        setupKeyboardType(iceMixField)
+        mixedLemonAndIce = [currentLemons, currentIceCubes]
         updateMainView()
     }
     
@@ -148,13 +129,6 @@ class ViewController: UIViewController {
         
     }
     
-    func enableButtons() {
-        unMixButton.enabled = true
-        unMixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        mixButton.enabled = true
-        mixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-    }
-    
     func showAlert(header: String = "Warning", message: String) {
         
         var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -173,77 +147,36 @@ class ViewController: UIViewController {
         
     }
     
-    func setupKeyboardType(textField: UITextField) {
-        textField.keyboardType = UIKeyboardType.NumberPad
-    }
-    
-    func mixLemonsAndIce() {
-        
-        var amountOfLemons = lemonMixField.text.toInt()
-        var amountOfIce = iceMixField.text.toInt()
-        
-        if let lemons = amountOfLemons {
-            if let iceCubes = amountOfIce {
-                if currentLemons >= lemons && currentIceCubes >= iceCubes {
-                    currentLemons -= lemons
-                    currentIceCubes -= iceCubes
-                    updateMainView()
-                }
-                else {
-                    showAlert(header: "Warning", message: "Not enough inventory to mix.")
-                }
-                
-            } else {
-                showAlert(header: "Oh no!!", message: "You must insert ice!")
-                enableButtons()
-            }
-        }  else {
-            showAlert(header: "Oh no!!", message: "You must insert lemons!")
-            enableButtons()
+    func mixLemonsAndIce(buttonPressed: String) {
+
+        if currentLemons > 0 && currentIceCubes > 0 {
+            mixedLemonAndIce = [currentLemons, currentIceCubes]
+            currentLemons -= currentLemons
+            currentIceCubes -= currentIceCubes
+            setupButtonAvailability(buttonPressed)
+            updateMainView()
+        }
+        else {
+            showAlert(header: "Warning", message: "Not enough inventory to mix.")
         }
         
         
     }
     
-    func unMixLemonsAndIce() {
-        
-        var amountOfLemons = lemonMixField.text.toInt()
-        var amountOfIce = iceMixField.text.toInt()
-        
-        if let lemons = amountOfLemons {
-            if let iceCubes = amountOfIce {
-                if currentLemons < lemons && currentIceCubes < iceCubes  {
-                    currentLemons += lemons
-                    currentIceCubes += iceCubes
-                    updateMainView()
-                } else {
-                    showAlert(header: "Warning", message: "Cannot unmix.")
-                }
-                
-            } else {
-                showAlert(header: "Oh no!!", message: "You must insert amount of ice to unmix!")
-                enableButtons()
-            }
-        }  else {
-            showAlert(header: "Oh no!!", message: "You must insert amount of lemons to unmix!")
-            enableButtons()
-        }
-        
-        
+    func unMixLemonsAndIce(buttonPressed: String) {
+        currentLemons += mixedLemonAndIce[0]
+        currentIceCubes += mixedLemonAndIce[1]
+        mixedLemonAndIce.removeAll(keepCapacity: true)
+        setupButtonAvailability(buttonPressed)
+        updateMainView()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }
+
+
+
+
+
+
 

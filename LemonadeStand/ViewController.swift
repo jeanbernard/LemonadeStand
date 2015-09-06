@@ -88,6 +88,8 @@ class ViewController: UIViewController {
         iceMixField.resignFirstResponder()
         lemonMixField.clearsOnBeginEditing = true
         iceMixField.clearsOnBeginEditing = true
+        lemonMixField.enabled = false
+        iceMixField.enabled = false
     }
     
     @IBAction func unmixButtonPressed(sender: UIButton) {
@@ -98,6 +100,8 @@ class ViewController: UIViewController {
         iceMixField.resignFirstResponder()
         lemonMixField.clearsOnBeginEditing = true
         iceMixField.clearsOnBeginEditing = true
+        lemonMixField.enabled = true
+        iceMixField.enabled = true
     }
     
     
@@ -109,7 +113,6 @@ class ViewController: UIViewController {
         setupKeyboardType(lemonMixField)
         setupKeyboardType(iceMixField)
         updateMainView()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -130,6 +133,7 @@ class ViewController: UIViewController {
     }
     
     func setupButtonAvailability(button: String) {
+        
         if button == "Mix" {
             unMixButton.enabled = true
             unMixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -141,6 +145,14 @@ class ViewController: UIViewController {
             unMixButton.enabled = false
             unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
         }
+        
+    }
+    
+    func enableButtons() {
+        unMixButton.enabled = true
+        unMixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        mixButton.enabled = true
+        mixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
     }
     
     func showAlert(header: String = "Warning", message: String) {
@@ -183,9 +195,11 @@ class ViewController: UIViewController {
                 
             } else {
                 showAlert(header: "Oh no!!", message: "You must insert ice!")
+                enableButtons()
             }
         }  else {
             showAlert(header: "Oh no!!", message: "You must insert lemons!")
+            enableButtons()
         }
         
         
@@ -208,9 +222,11 @@ class ViewController: UIViewController {
                 
             } else {
                 showAlert(header: "Oh no!!", message: "You must insert amount of ice to unmix!")
+                enableButtons()
             }
         }  else {
             showAlert(header: "Oh no!!", message: "You must insert amount of lemons to unmix!")
+            enableButtons()
         }
         
         

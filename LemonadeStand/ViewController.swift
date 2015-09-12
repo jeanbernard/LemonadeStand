@@ -31,8 +31,13 @@ class ViewController: UIViewController {
     var currentMoney = 10.00
     var currentLemons = 1
     var currentIceCubes = 3
+    var currentLemonadeForTheDay = 0.0
     var mixedLemonAndIce: [Int] = []
+    
+    //MARK: - Profit
+    
     var currentCustomers = 0
+    var amountSold = 0
     
     
     //MARK: - IBActions
@@ -130,6 +135,7 @@ class ViewController: UIViewController {
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
         currentCustomersLabel.text = "\(currentCustomers)"
+        soldLabel.text = "\(amountSold)"
         
         
     }
@@ -172,7 +178,7 @@ class ViewController: UIViewController {
         
         if currentLemons > 0 && currentIceCubes > 0 {
             mixedLemonAndIce = [currentLemons, currentIceCubes]
-            createLemonade(lemons: currentLemons, ice: currentIceCubes)
+            currentLemonadeForTheDay = createLemonade(lemons: currentLemons, ice: currentIceCubes)
             currentLemons -= currentLemons
             currentIceCubes -= currentIceCubes
             setupButtonAvailability(buttonPressed)
@@ -194,7 +200,7 @@ class ViewController: UIViewController {
         updateMainView()
     }
     
-    func createLemonade(#lemons: Int, ice: Int) {
+    func createLemonade(#lemons: Int, ice: Int) -> Double {
         
         var resultingLemonade = Double(lemons) / Double(ice)
         
@@ -212,6 +218,8 @@ class ViewController: UIViewController {
             createdLemonade.textColor = UIColor.blueColor()
         }
         
+        return resultingLemonade
+        
     }
     
     func startTheDay() {
@@ -227,23 +235,27 @@ class ViewController: UIViewController {
         }
         
         calculateCustomerPreferences(customerPreferences)
-        
+        updateMainView()
     }
     
     func calculateCustomerPreferences(prefs: [Double]) {
         
         for preferences in prefs {
             
-            if preferences <= 0.40 {
+            if preferences <= 0.40 && currentLemonadeForTheDay > 1 {
                 println("Acidic")
-            } else if preferences >= 0.41 && preferences <= 0.60 {
-                println("Equal")
-            } else if preferences >= 0.61 && preferences <= 1 {
+                amountSold++
+            } else if preferences >= 0.41 && preferences <= 0.60
+                && currentLemonadeForTheDay == 1 {
+                    println("Equal")
+                    amountSold++
+            } else if preferences >= 0.61 && preferences <= 1 && currentLemonadeForTheDay < 1 {
                 println("Diluted")
+                amountSold++
             }
             
         }
-      
+        
         
     }
     

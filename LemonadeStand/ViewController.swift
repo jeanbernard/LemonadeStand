@@ -217,7 +217,6 @@ class ViewController: UIViewController {
     func startTheDay() {
         
         var amountOfCustomers = Int(arc4random_uniform(UInt32(11)) + 1)
-        println(amountOfCustomers)
         currentCustomers = amountOfCustomers
         var customerPreferences: [Double] = []
         
@@ -227,10 +226,24 @@ class ViewController: UIViewController {
             println(customerPreferences[i])
         }
         
+        calculateCustomerPreferences(customerPreferences)
         
     }
     
     func calculateCustomerPreferences(prefs: [Double]) {
+        
+        for preferences in prefs {
+            
+            if preferences <= 0.40 {
+                println("Acidic")
+            } else if preferences >= 0.41 && preferences <= 0.60 {
+                println("Equal")
+            } else if preferences >= 0.61 && preferences <= 1 {
+                println("Diluted")
+            }
+            
+        }
+      
         
     }
     

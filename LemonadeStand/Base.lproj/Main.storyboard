@@ -366,6 +366,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="8" y="15" width="93" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="startDayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p4F-B2-6OW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8x-T1-PvQ">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -377,6 +380,9 @@
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="8" y="53" width="93" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="startSellingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lwd-92-4De"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customers:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MR-rO-JUs">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -402,7 +408,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="248" y="15" width="10" height="21"/>
+                                            <rect key="frame" x="248" y="15" width="36" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7be-8G-kVd">
@@ -411,7 +417,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="200" y="44" width="10" height="21"/>
+                                            <rect key="frame" x="200" y="44" width="58" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdY-6U-2Jo">
@@ -429,7 +435,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="200" y="73" width="43" height="21"/>
+                                            <rect key="frame" x="200" y="73" width="64" height="21"/>
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-Am-LcH">
@@ -504,10 +510,13 @@
                     </view>
                     <connections>
                         <outlet property="createdLemonade" destination="kP3-BM-Omw" id="zND-0o-2Yl"/>
+                        <outlet property="currentCustomersLabel" destination="jMU-bf-iA3" id="rrz-O3-OFb"/>
                         <outlet property="currentIceCubesLabel" destination="P2P-nc-9XA" id="03a-aL-xtt"/>
                         <outlet property="currentLemonsLabel" destination="ymM-go-9Eg" id="Oxf-L4-zec"/>
                         <outlet property="currentMoneyLabel" destination="Hqe-Bv-DWZ" id="aVt-sg-jqg"/>
                         <outlet property="mixButton" destination="hWy-Lt-dsW" id="SZO-Mj-FNd"/>
+                        <outlet property="profitLabel" destination="uMD-m8-scF" id="kAc-T2-i3e"/>
+                        <outlet property="soldLabel" destination="7be-8G-kVd" id="Vkn-Tn-mAl"/>
                         <outlet property="unMixButton" destination="dmi-5W-t46" id="xQu-ud-Xqe"/>
                     </connections>
                 </viewController>

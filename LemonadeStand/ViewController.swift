@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var mixButton: UIButton!
     @IBOutlet weak var unMixButton: UIButton!
     @IBOutlet weak var createdLemonade: UILabel!
+    @IBOutlet weak var currentCustomersLabel: UILabel!
+    
+    @IBOutlet weak var soldLabel: UILabel!
+    @IBOutlet weak var profitLabel: UILabel!
     
     
     
@@ -28,6 +32,7 @@ class ViewController: UIViewController {
     var currentLemons = 1
     var currentIceCubes = 3
     var mixedLemonAndIce: [Int] = []
+    var currentCustomers = 0
     
     
     //MARK: - IBActions
@@ -88,6 +93,16 @@ class ViewController: UIViewController {
         unMixLemonsAndIce(sender.currentTitle!)
     }
     
+    @IBAction func startDayButtonPressed(sender: UIButton) {
+        startTheDay()
+        updateMainView()
+    }
+    
+    @IBAction func startSellingButtonPressed(sender: UIButton) {
+    }
+    
+    
+    
     
     //MARK: - Methods
     
@@ -96,6 +111,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mixedLemonAndIce = [currentLemons, currentIceCubes]
         updateMainView()
+        unMixButton.enabled = false
+        unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,7 +129,8 @@ class ViewController: UIViewController {
         currentMoneyLabel.text = "$\(currentMoney)"
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
-
+        currentCustomersLabel.text = "\(currentCustomers)"
+        
         
     }
     
@@ -151,7 +169,7 @@ class ViewController: UIViewController {
     }
     
     func mixLemonsAndIce(buttonPressed: String) {
-
+        
         if currentLemons > 0 && currentIceCubes > 0 {
             mixedLemonAndIce = [currentLemons, currentIceCubes]
             createLemonade(lemons: currentLemons, ice: currentIceCubes)
@@ -193,6 +211,26 @@ class ViewController: UIViewController {
             createdLemonade.text = "Diluted"
             createdLemonade.textColor = UIColor.blueColor()
         }
+        
+    }
+    
+    func startTheDay() {
+        
+        var amountOfCustomers = Int(arc4random_uniform(UInt32(11)) + 1)
+        println(amountOfCustomers)
+        currentCustomers = amountOfCustomers
+        var customerPreferences: [Double] = []
+        
+        for var i = 0; i < amountOfCustomers; i++ {
+            var customerPrefs = Double(arc4random_uniform(UInt32(101)))
+            customerPreferences.append(customerPrefs / 100)
+            println(customerPreferences[i])
+        }
+        
+        
+    }
+    
+    func calculateCustomerPreferences(prefs: [Double]) {
         
     }
     

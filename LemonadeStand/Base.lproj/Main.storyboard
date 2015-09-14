@@ -564,7 +564,9 @@
                         <outlet property="currentMoneyLabel" destination="Hqe-Bv-DWZ" id="aVt-sg-jqg"/>
                         <outlet property="currentProfitLabel" destination="uMD-m8-scF" id="ZdC-xp-2VN"/>
                         <outlet property="currentSoldLabel" destination="7be-8G-kVd" id="v0F-yq-fPE"/>
+                        <outlet property="endDayButton" destination="a8x-T1-PvQ" id="9iK-rv-oSF"/>
                         <outlet property="mixButton" destination="hWy-Lt-dsW" id="SZO-Mj-FNd"/>
+                        <outlet property="startDayButton" destination="ahw-fY-Kjb" id="vAc-aj-f8W"/>
                         <outlet property="totalCustomersLabel" destination="6m1-b4-dgP" id="aLq-tA-hqy"/>
                         <outlet property="totalProfitsLabel" destination="URj-6o-xpc" id="u0F-tI-dee"/>
                         <outlet property="totalSalesLabel" destination="eaX-Kb-Kc6" id="2eQ-PM-FZe"/>

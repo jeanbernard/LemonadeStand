@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalSalesLabel: UILabel!
     @IBOutlet weak var currentProfitLabel: UILabel!
     @IBOutlet weak var totalProfitsLabel: UILabel!
+    @IBOutlet weak var startDayButton: UIButton!
+    @IBOutlet weak var endDayButton: UIButton!
     
     
     
@@ -117,13 +119,26 @@ class ViewController: UIViewController {
         totalSold += amountSold
         totalProfits += currentProfit
         totalCustomers += currentCustomers
+        currentMoney += currentProfit
         currentCustomers = 0
         amountSold = 0
         currentProfit = 0.00
+        startDayButton.enabled = false
+        startDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        endDayButton.enabled = false
+        endDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        mixButton.enabled = true
+        mixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        unMixButton.enabled = false
+        unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
         updateMainView()
     }
     
-    
+    func checkGameOver(){
+        if currentProfit <= 1.00 && currentLemons == 0 && currentIceCubes == 0 {
+            
+        }
+    }
     
     
     //MARK: - Methods
@@ -135,6 +150,11 @@ class ViewController: UIViewController {
         updateMainView()
         unMixButton.enabled = false
         unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        startDayButton.enabled = false
+        startDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        endDayButton.enabled = false
+        endDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,7 +176,7 @@ class ViewController: UIViewController {
         currentProfitLabel.text = "$\(currentProfit)"
         totalCustomersLabel.text = "\(totalCustomers)"
         totalSalesLabel.text = "\(totalSold)"
-        totalProfitsLabel.text = "\(totalProfits)"
+        totalProfitsLabel.text = "$\(totalProfits)"
         
         
     }
@@ -166,6 +186,10 @@ class ViewController: UIViewController {
         if button == "Mix" {
             unMixButton.enabled = true
             unMixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            startDayButton.enabled = true
+            startDayButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            endDayButton.enabled = true
+            endDayButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
             mixButton.enabled = false
             mixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
         } else {
@@ -173,6 +197,10 @@ class ViewController: UIViewController {
             mixButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
             unMixButton.enabled = false
             unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+            startDayButton.enabled = false
+            startDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+            endDayButton.enabled = false
+            endDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
         }
         
     }
@@ -258,6 +286,11 @@ class ViewController: UIViewController {
         
         calculateCustomerPreferences(customerPreferences)
         updateMainView()
+        startDayButton.enabled = false
+        startDayButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        unMixButton.enabled = false
+        unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        
     }
     
     func calculateCustomerPreferences(prefs: [Double]) {

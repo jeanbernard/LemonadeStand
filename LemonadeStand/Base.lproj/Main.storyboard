@@ -441,15 +441,6 @@
                                             <rect key="frame" x="135" y="86" width="93" height="35"/>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMD-m8-scF">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="207" y="91" width="46" height="21"/>
-                                        </variation>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Money Bag Filled-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="rvw-KU-GdS">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
@@ -495,6 +486,15 @@
                                             <rect key="frame" x="300" y="57" width="36" height="21"/>
                                         </variation>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMD-m8-scF">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="207" y="91" width="46" height="21"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.9087602454847854" blue="0.72555523498584984" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
@@ -507,13 +507,13 @@
                                         <exclude reference="vFR-I7-bq1"/>
                                         <exclude reference="7be-8G-kVd"/>
                                         <exclude reference="SOb-al-Lrq"/>
-                                        <exclude reference="uMD-m8-scF"/>
                                         <exclude reference="rvw-KU-GdS"/>
                                         <exclude reference="URj-6o-xpc"/>
                                         <exclude reference="wop-UJ-Nxf"/>
                                         <exclude reference="7tV-fQ-2ig"/>
                                         <exclude reference="6m1-b4-dgP"/>
                                         <exclude reference="eaX-Kb-Kc6"/>
+                                        <exclude reference="uMD-m8-scF"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -527,13 +527,13 @@
                                         <include reference="vFR-I7-bq1"/>
                                         <include reference="7be-8G-kVd"/>
                                         <include reference="SOb-al-Lrq"/>
-                                        <include reference="uMD-m8-scF"/>
                                         <include reference="rvw-KU-GdS"/>
                                         <include reference="URj-6o-xpc"/>
                                         <include reference="wop-UJ-Nxf"/>
                                         <include reference="7tV-fQ-2ig"/>
                                         <include reference="6m1-b4-dgP"/>
                                         <include reference="eaX-Kb-Kc6"/>
+                                        <include reference="uMD-m8-scF"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -562,10 +562,12 @@
                         <outlet property="currentIceCubesLabel" destination="P2P-nc-9XA" id="03a-aL-xtt"/>
                         <outlet property="currentLemonsLabel" destination="ymM-go-9Eg" id="Oxf-L4-zec"/>
                         <outlet property="currentMoneyLabel" destination="Hqe-Bv-DWZ" id="aVt-sg-jqg"/>
+                        <outlet property="currentProfitLabel" destination="uMD-m8-scF" id="ZdC-xp-2VN"/>
+                        <outlet property="currentSoldLabel" destination="7be-8G-kVd" id="v0F-yq-fPE"/>
                         <outlet property="mixButton" destination="hWy-Lt-dsW" id="SZO-Mj-FNd"/>
-                        <outlet property="profitLabel" destination="uMD-m8-scF" id="kAc-T2-i3e"/>
-                        <outlet property="soldLabel" destination="7be-8G-kVd" id="Vkn-Tn-mAl"/>
-                        <outlet property="totalCustomersLabel" destination="6m1-b4-dgP" id="0DJ-yh-Ej9"/>
+                        <outlet property="totalCustomersLabel" destination="6m1-b4-dgP" id="aLq-tA-hqy"/>
+                        <outlet property="totalProfitsLabel" destination="URj-6o-xpc" id="u0F-tI-dee"/>
+                        <outlet property="totalSalesLabel" destination="eaX-Kb-Kc6" id="2eQ-PM-FZe"/>
                         <outlet property="unMixButton" destination="dmi-5W-t46" id="xQu-ud-Xqe"/>
                     </connections>
                 </viewController>

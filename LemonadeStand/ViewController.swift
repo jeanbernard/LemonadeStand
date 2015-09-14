@@ -21,10 +21,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var createdLemonade: UILabel!
     @IBOutlet weak var currentCustomersLabel: UILabel!
     @IBOutlet weak var totalCustomersLabel: UILabel!
+    @IBOutlet weak var currentSoldLabel: UILabel!
+    @IBOutlet weak var totalSalesLabel: UILabel!
+    @IBOutlet weak var currentProfitLabel: UILabel!
+    @IBOutlet weak var totalProfitsLabel: UILabel!
     
-    @IBOutlet weak var soldLabel: UILabel!
-    @IBOutlet weak var profitLabel: UILabel!
     
+
+    var currentCustomers = 0
+    var amountSold = 0
     
     
     //MARK: - Inventory
@@ -35,10 +40,9 @@ class ViewController: UIViewController {
     var currentLemonadeForTheDay = 0.0
     var mixedLemonAndIce: [Int] = []
     
-    //MARK: - Profit
     
-    var currentCustomers = 0
-    var amountSold = 0
+    
+    
     
     
     //MARK: - IBActions
@@ -136,7 +140,7 @@ class ViewController: UIViewController {
         currentLemonsLabel.text = "\(currentLemons)"
         currentIceCubesLabel.text = "\(currentIceCubes)"
         currentCustomersLabel.text = "\(currentCustomers)"
-        soldLabel.text = "\(amountSold)"
+        currentSoldLabel.text = "\(amountSold)"
         
         
     }

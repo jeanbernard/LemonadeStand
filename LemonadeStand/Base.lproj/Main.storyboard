@@ -565,6 +565,7 @@
                         <outlet property="mixButton" destination="hWy-Lt-dsW" id="SZO-Mj-FNd"/>
                         <outlet property="profitLabel" destination="uMD-m8-scF" id="kAc-T2-i3e"/>
                         <outlet property="soldLabel" destination="7be-8G-kVd" id="Vkn-Tn-mAl"/>
+                        <outlet property="totalCustomersLabel" destination="6m1-b4-dgP" id="0DJ-yh-Ej9"/>
                         <outlet property="unMixButton" destination="dmi-5W-t46" id="xQu-ud-Xqe"/>
                     </connections>
                 </viewController>

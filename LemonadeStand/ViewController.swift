@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var unMixButton: UIButton!
     @IBOutlet weak var createdLemonade: UILabel!
     @IBOutlet weak var currentCustomersLabel: UILabel!
+    @IBOutlet weak var totalCustomersLabel: UILabel!
     
     @IBOutlet weak var soldLabel: UILabel!
     @IBOutlet weak var profitLabel: UILabel!

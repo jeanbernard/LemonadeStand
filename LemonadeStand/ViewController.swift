@@ -31,7 +31,9 @@ class ViewController: UIViewController {
     var currentCustomers = 0
     var amountSold = 0
     var currentProfit = 0.00
-    
+    var totalCustomers = 0
+    var totalSold = 0
+    var totalProfits = 0.00
     
     
     //MARK: - Inventory
@@ -110,7 +112,15 @@ class ViewController: UIViewController {
         updateMainView()
     }
     
-    @IBAction func startSellingButtonPressed(sender: UIButton) {
+    
+    @IBAction func endDayButtonPressed(sender: UIButton) {
+        totalSold += amountSold
+        totalProfits += currentProfit
+        totalCustomers += currentCustomers
+        currentCustomers = 0
+        amountSold = 0
+        currentProfit = 0.00
+        updateMainView()
     }
     
     
@@ -144,6 +154,9 @@ class ViewController: UIViewController {
         currentCustomersLabel.text = "\(currentCustomers)"
         currentSoldLabel.text = "\(amountSold)"
         currentProfitLabel.text = "$\(currentProfit)"
+        totalCustomersLabel.text = "\(totalCustomers)"
+        totalSalesLabel.text = "\(totalSold)"
+        totalProfitsLabel.text = "\(totalProfits)"
         
         
     }
@@ -191,6 +204,7 @@ class ViewController: UIViewController {
             currentIceCubes -= currentIceCubes
             setupButtonAvailability(buttonPressed)
             updateMainView()
+
         }
         else {
             showAlert(header: "Warning", message: "Not enough inventory to mix.")

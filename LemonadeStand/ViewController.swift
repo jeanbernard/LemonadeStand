@@ -27,9 +27,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalProfitsLabel: UILabel!
     
     
-
+    
     var currentCustomers = 0
     var amountSold = 0
+    var currentProfit = 0.00
+    
     
     
     //MARK: - Inventory
@@ -141,6 +143,7 @@ class ViewController: UIViewController {
         currentIceCubesLabel.text = "\(currentIceCubes)"
         currentCustomersLabel.text = "\(currentCustomers)"
         currentSoldLabel.text = "\(amountSold)"
+        currentProfitLabel.text = "$\(currentProfit)"
         
         
     }
@@ -229,7 +232,7 @@ class ViewController: UIViewController {
     
     func startTheDay() {
         
-        var amountOfCustomers = Int(arc4random_uniform(UInt32(11)) + 1)
+        var amountOfCustomers = Int(arc4random_uniform(UInt32(10)) + 1)
         currentCustomers = amountOfCustomers
         var customerPreferences: [Double] = []
         
@@ -250,13 +253,16 @@ class ViewController: UIViewController {
             if preferences <= 0.40 && currentLemonadeForTheDay > 1 {
                 println("Acidic")
                 amountSold++
+                currentProfit++
             } else if preferences >= 0.41 && preferences <= 0.60
                 && currentLemonadeForTheDay == 1 {
                     println("Equal")
                     amountSold++
+                    currentProfit++
             } else if preferences >= 0.61 && preferences <= 1 && currentLemonadeForTheDay < 1 {
                 println("Diluted")
                 amountSold++
+                currentProfit++
             }
             
         }

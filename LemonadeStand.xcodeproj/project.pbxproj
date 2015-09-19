@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154913B21B97F50700F8231C /* Lemonade.png in Resources */ = {isa = PBXBuildFile; fileRef = 154913B11B97F50700F8231C /* Lemonade.png */; };
+		15493F511BA48163007003F4 /* Contacts-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F501BA48163007003F4 /* Contacts-50.png */; };
+		15493F541BA48283007003F4 /* Money Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F521BA48283007003F4 /* Money Filled-50.png */; };
+		15493F551BA48283007003F4 /* Money-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F531BA48283007003F4 /* Money-50.png */; };
+		15493F571BA48350007003F4 /* Sale-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F561BA48350007003F4 /* Sale-50.png */; };
+		15493F5A1BA483BB007003F4 /* Money Bag Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F581BA483BB007003F4 /* Money Bag Filled-50.png */; };
+		15493F5B1BA483BB007003F4 /* Money Bag-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F591BA483BB007003F4 /* Money Bag-50.png */; };
+		15493F5D1BA4840E007003F4 /* Sale Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F5C1BA4840E007003F4 /* Sale Filled-50.png */; };
+		15493F5F1BA485B8007003F4 /* Contacts Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 15493F5E1BA485B8007003F4 /* Contacts Filled-50.png */; };
 		156D3C5A1B97C2C1004227AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156D3C591B97C2C1004227AF /* AppDelegate.swift */; };
 		156D3C5C1B97C2C1004227AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156D3C5B1B97C2C1004227AF /* ViewController.swift */; };
 		156D3C5F1B97C2C1004227AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156D3C5D1B97C2C1004227AF /* Main.storyboard */; };
 		156D3C611B97C2C1004227AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156D3C601B97C2C1004227AF /* Images.xcassets */; };
 		156D3C641B97C2C1004227AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156D3C621B97C2C1004227AF /* LaunchScreen.xib */; };
 		156D3C701B97C2C1004227AF /* LemonadeStandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156D3C6F1B97C2C1004227AF /* LemonadeStandTests.swift */; };
+		156D3C7B1B97D3CA004227AF /* Ice.png in Resources */ = {isa = PBXBuildFile; fileRef = 156D3C791B97D3CA004227AF /* Ice.png */; };
+		156D3C7C1B97D3CA004227AF /* Lemon.png in Resources */ = {isa = PBXBuildFile; fileRef = 156D3C7A1B97D3CA004227AF /* Lemon.png */; };
+		156D3C7F1B97D5FB004227AF /* Money.png in Resources */ = {isa = PBXBuildFile; fileRef = 156D3C7E1B97D5FB004227AF /* Money.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		154913B11B97F50700F8231C /* Lemonade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lemonade.png; sourceTree = "<group>"; };
+		15493F501BA48163007003F4 /* Contacts-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contacts-50.png"; sourceTree = "<group>"; };
+		15493F521BA48283007003F4 /* Money Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money Filled-50.png"; sourceTree = "<group>"; };
+		15493F531BA48283007003F4 /* Money-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money-50.png"; sourceTree = "<group>"; };
+		15493F561BA48350007003F4 /* Sale-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sale-50.png"; sourceTree = "<group>"; };
+		15493F581BA483BB007003F4 /* Money Bag Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money Bag Filled-50.png"; sourceTree = "<group>"; };
+		15493F591BA483BB007003F4 /* Money Bag-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money Bag-50.png"; sourceTree = "<group>"; };
+		15493F5C1BA4840E007003F4 /* Sale Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sale Filled-50.png"; sourceTree = "<group>"; };
+		15493F5E1BA485B8007003F4 /* Contacts Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contacts Filled-50.png"; sourceTree = "<group>"; };
 		156D3C541B97C2C1004227AF /* LemonadeStand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonadeStand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		156D3C581B97C2C1004227AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		156D3C591B97C2C1004227AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +57,9 @@
 		156D3C691B97C2C1004227AF /* LemonadeStandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonadeStandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		156D3C6E1B97C2C1004227AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		156D3C6F1B97C2C1004227AF /* LemonadeStandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonadeStandTests.swift; sourceTree = "<group>"; };
+		156D3C791B97D3CA004227AF /* Ice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ice.png; sourceTree = "<group>"; };
+		156D3C7A1B97D3CA004227AF /* Lemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lemon.png; sourceTree = "<group>"; };
+		156D3C7E1B97D5FB004227AF /* Money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Money.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +114,19 @@
 		156D3C571B97C2C1004227AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				156D3C7D1B97D3D4004227AF /* Images */,
+				156D3C791B97D3CA004227AF /* Ice.png */,
+				15493F581BA483BB007003F4 /* Money Bag Filled-50.png */,
+				15493F591BA483BB007003F4 /* Money Bag-50.png */,
+				15493F521BA48283007003F4 /* Money Filled-50.png */,
+				15493F561BA48350007003F4 /* Sale-50.png */,
+				15493F5C1BA4840E007003F4 /* Sale Filled-50.png */,
+				15493F531BA48283007003F4 /* Money-50.png */,
+				15493F501BA48163007003F4 /* Contacts-50.png */,
+				15493F5E1BA485B8007003F4 /* Contacts Filled-50.png */,
+				156D3C7E1B97D5FB004227AF /* Money.png */,
+				154913B11B97F50700F8231C /* Lemonade.png */,
+				156D3C7A1B97D3CA004227AF /* Lemon.png */,
 				156D3C581B97C2C1004227AF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +147,13 @@
 				156D3C6E1B97C2C1004227AF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		156D3C7D1B97D3D4004227AF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +200,7 @@
 		156D3C4C1B97C2C1004227AF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Jean Bernard";
 				TargetAttributes = {
@@ -192,9 +237,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156D3C7F1B97D5FB004227AF /* Money.png in Resources */,
+				15493F5F1BA485B8007003F4 /* Contacts Filled-50.png in Resources */,
+				156D3C7B1B97D3CA004227AF /* Ice.png in Resources */,
 				156D3C5F1B97C2C1004227AF /* Main.storyboard in Resources */,
+				15493F511BA48163007003F4 /* Contacts-50.png in Resources */,
+				154913B21B97F50700F8231C /* Lemonade.png in Resources */,
 				156D3C641B97C2C1004227AF /* LaunchScreen.xib in Resources */,
+				15493F5A1BA483BB007003F4 /* Money Bag Filled-50.png in Resources */,
 				156D3C611B97C2C1004227AF /* Images.xcassets in Resources */,
+				15493F541BA48283007003F4 /* Money Filled-50.png in Resources */,
+				15493F5B1BA483BB007003F4 /* Money Bag-50.png in Resources */,
+				15493F5D1BA4840E007003F4 /* Sale Filled-50.png in Resources */,
+				156D3C7C1B97D3CA004227AF /* Lemon.png in Resources */,
+				15493F551BA48283007003F4 /* Money-50.png in Resources */,
+				15493F571BA48350007003F4 /* Sale-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +468,7 @@
 				156D3C751B97C2C1004227AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		156D3C761B97C2C1004227AF /* Build configuration list for PBXNativeTarget "LemonadeStandTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +477,7 @@
 				156D3C781B97C2C1004227AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

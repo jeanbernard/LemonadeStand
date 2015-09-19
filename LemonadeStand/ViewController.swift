@@ -208,6 +208,18 @@ class ViewController: UIViewController {
         
     }
     
+    func showResetAlert(header header: String = "Warning", message: String) {
+        
+        let alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let resetAction = UIAlertAction(title: "Reset", style: UIAlertActionStyle.Destructive) {
+            UIAlertAction in self.resetGame()
+        }
+        
+        alert.addAction(resetAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func addTextColor(amount: Int, label: UILabel) {
         
         if amount == 0 {
@@ -296,12 +308,11 @@ class ViewController: UIViewController {
                 print("Acidic")
                 amountSold++
                 currentProfit++
-            } else if preferences >= 0.41 && preferences <= 0.60
-                && currentLemonadeForTheDay == 1 {
-                    print("Equal")
-                    amountSold++
-                    currentProfit++
-            } else if preferences >= 0.61 && preferences <= 1 && currentLemonadeForTheDay < 1 {
+            } else if preferences >= 0.41 && preferences <= 0.60 && currentLemonadeForTheDay == 1 {
+                print("Equal")
+                amountSold++
+                currentProfit++
+            } else if preferences >= 0.61 && currentLemonadeForTheDay < 1 {
                 print("Diluted")
                 amountSold++
                 currentProfit++
@@ -314,12 +325,25 @@ class ViewController: UIViewController {
     
     func checkGameOver() {
         if currentMoney <= 2.00 {
-            print("game over")
+            showResetAlert(message: "Game Over")
         }
     }
     
     func resetGame() {
+        currentMoney = 10.00
+        currentLemons = 1
+        currentIceCubes = 3
+        currentLemonadeForTheDay = 0.0
+        mixedLemonAndIce = []
         
+        currentCustomers = 0
+        amountSold = 0
+        currentProfit = 0.00
+        totalCustomers = 0
+        totalSold = 0
+        totalProfits = 0.00
+        
+        updateMainView()
     }
     
     

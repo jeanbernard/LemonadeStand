@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             currentLemons += 1
             updateMainView()
         } else {
-            showAlert(header: "Out of money!!", message: "Can't purchase any more lemons. Must acquire more money.")
+            showAlert(header:"Out of money!!", message: "Can't purchase any more lemons. Must acquire more money.")
         }
         
     }
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
             currentIceCubes += 1
             updateMainView()
         } else {
-            showAlert(header: "Out of money!!", message: "Can't purchase any more ice. Must acquire more money")
+            showAlert(header:"Out of money!!", message: "Can't purchase any more ice. Must acquire more money")
         }
         
     }
@@ -132,12 +132,7 @@ class ViewController: UIViewController {
         unMixButton.enabled = false
         unMixButton.setTitleColor(UIColor.redColor(), forState: .Normal)
         updateMainView()
-    }
-    
-    func checkGameOver(){
-        if currentProfit <= 1.00 && currentLemons == 0 && currentIceCubes == 0 {
-            
-        }
+        checkGameOver()
     }
     
     
@@ -205,9 +200,9 @@ class ViewController: UIViewController {
         
     }
     
-    func showAlert(header: String = "Warning", message: String) {
+    func showAlert(header header: String = "Warning", message: String) {
         
-        var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
         
@@ -250,9 +245,9 @@ class ViewController: UIViewController {
         updateMainView()
     }
     
-    func createLemonade(#lemons: Int, ice: Int) -> Double {
+    func createLemonade(lemons lemons: Int, ice: Int) -> Double {
         
-        var resultingLemonade = Double(lemons) / Double(ice)
+        let resultingLemonade = Double(lemons) / Double(ice)
         
         if resultingLemonade > 1 {
             createdLemonade.hidden = false
@@ -274,14 +269,14 @@ class ViewController: UIViewController {
     
     func startTheDay() {
         
-        var amountOfCustomers = Int(arc4random_uniform(UInt32(10)) + 1)
+        let amountOfCustomers = Int(arc4random_uniform(UInt32(10)) + 1)
         currentCustomers = amountOfCustomers
         var customerPreferences: [Double] = []
         
         for var i = 0; i < amountOfCustomers; i++ {
-            var customerPrefs = Double(arc4random_uniform(UInt32(101)))
+            let customerPrefs = Double(arc4random_uniform(UInt32(101)))
             customerPreferences.append(customerPrefs / 100)
-            println(customerPreferences[i])
+            print(customerPreferences[i])
         }
         
         calculateCustomerPreferences(customerPreferences)
@@ -298,22 +293,32 @@ class ViewController: UIViewController {
         for preferences in prefs {
             
             if preferences <= 0.40 && currentLemonadeForTheDay > 1 {
-                println("Acidic")
+                print("Acidic")
                 amountSold++
                 currentProfit++
             } else if preferences >= 0.41 && preferences <= 0.60
                 && currentLemonadeForTheDay == 1 {
-                    println("Equal")
+                    print("Equal")
                     amountSold++
                     currentProfit++
             } else if preferences >= 0.61 && preferences <= 1 && currentLemonadeForTheDay < 1 {
-                println("Diluted")
+                print("Diluted")
                 amountSold++
                 currentProfit++
             }
             
         }
         
+        
+    }
+    
+    func checkGameOver() {
+        if currentMoney <= 2.00 {
+            print("game over")
+        }
+    }
+    
+    func resetGame() {
         
     }
     
